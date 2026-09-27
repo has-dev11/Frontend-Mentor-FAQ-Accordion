@@ -1,0 +1,100 @@
+@import url("fonts.css");
+
+:root {
+    --White:hsl(0, 100%, 100%);
+    --Purple-100: hsl(275, 100%, 97%);
+    --Purple-600: hsl(292, 16%, 49%);
+    --Purple-950: hsl(292, 42%, 14%);
+
+    font-family: "WorkSans";
+    font-weight: 400;
+    font-size: 16px;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10% 0;
+    background-color: var(--Purple-100);
+    background-image: url("/assets/images/background-pattern-mobile.svg");
+    background-repeat: no-repeat;
+}
+.card {
+    width: 300px;
+    padding: 2rem 1.5rem;
+    background-color: var(--White);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+}
+
+
+header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1.5rem;
+}
+header h1 {
+    color: var(--Purple-950);
+    font-weight: 700;
+}
+header img {
+    width: 24px;
+}
+
+.question {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 1.8rem;
+    width: 100%;
+    cursor: pointer;
+}
+.question h2 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--Purple-950);
+    grid-column: 1;
+}
+
+.question img {
+    width: 24px;
+    justify-self: end;
+    display: inline-block;
+}
+
+.answer {
+    padding-top: 0.8rem;
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: var(--Purple-600);
+    display: none;
+    transition: all 0.5s linear;
+}
+
+
+@media screen and (min-width: 350px) and (max-width: 500px) {
+    .card {
+        width: 300px + calc(150px * 100vw / (400px))
+    }
+}
+@media screen and (min-width: 500px) {
+    .card {
+        width: 450px;
+    }
+    .q > h2 {
+        padding-right: 9.5rem
+    }
+}
