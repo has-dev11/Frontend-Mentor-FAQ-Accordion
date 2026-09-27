@@ -91,6 +91,9 @@ header img {
     }
 }
 @media screen and (min-width: 500px) {
+    body {
+        background-image: url("/assets/images/background-pattern-desktop.svg");
+    }
     .card {
         width: 450px;
     }
